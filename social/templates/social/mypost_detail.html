@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="p-5">
+    <h3 class="myhead2">{{mypost.subject}}</h3><hr>
+    <div class="row">
+        <div class="col-cm-6">
+            <img style="width: 500px; height: 650px" class="img-fluid" src="/media/{{mypost.pic}}" />
+        </div>
+        <div class="col-cm-6">
+            <p style="margin-left:150px"><strong>     MSG :: </strong>{{mypost.msg}}</p>
+            <p style="margin-left:150px"><strong>     Date :: </strong>{{mypost.cr_date | date:"d/m/y"}}</p>
+        </div>
+    </div>
+    <a class="btn btn-info mt-3" href="/social/mypost">Back</a>
+</div>
+{% endblock %}

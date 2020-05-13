@@ -1,0 +1,51 @@
+@charset "UTF-8";
+body{
+    background-color: #faeee5;
+    font-size: 1.2em;
+}
+.myfooter, .myfooter a{
+    font-size: 22px;
+    color: #400000;
+    text-shadow: 2px 2px 2px white;
+    font-family: cursive;
+    font-weight: bold;
+    background-image: url("/static/images/bg.jpg");
+}
+#myheader1{
+    height: 240px;
+}
+.myhead2{
+    color: #400000;
+    text-shadow: 2px 2px 2px white;
+    font-family: cursive;
+}
+#headfix{
+    position: absolute;
+    top: 170px;
+    width: 100%;
+    z-index: 10;
+}
+.navbar-brand{
+    font-size: 40px;
+    color: #400000;
+    text-shadow: 2px 2px 2px white;
+    font-family: cursive;
+    font-weight: bold;
+}
+.navbar {
+    font-size: 30px;
+    color: #400000;
+    text-shadow: 2px 2px 2px white;
+    font-family: cursive;
+    font-weight: bold;
+}
+@media(max-width: 766px){
+    .navbar-nav{
+        background-color: #faeee5;
+    }
+}
+.myfooter .col-sm-6{
+    border-bottom: 1px solid #400000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="p-5">
+    <h3 class="myhead2">{{mypost_list}}</h3><hr>
+    <form class="form-inline">
+        <input type="text" name="si" value="{{request.GET.si}}" placeholder="Search" class="form-control mr-3" />
+        <input class="btn btn-primary mr-3" type="submit" value="Search" />
+    </form>
+    <div class="row">
+        <div class="col">
+            <p>{{mypost_list.com}}</p>
+        </div>
+    </div>
+    <a class="btn btn-info mt-3" href="/social/home">Back</a>
+</div>
+{% endblock %}

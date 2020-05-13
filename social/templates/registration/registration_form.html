@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="p-5">
+    <div class="row text-justify">
+        <div class="col">
+            <h1 class="myhead2">Register Page</h1>
+        </div>
+    </div>
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        {{form|crispy}}<br>
+        <input type="submit" class="btn btn-primary" />
+    </form>
+</main>
+{% endblock %}

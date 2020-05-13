@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<main class="p-5">
+    <div class="row text-justify">
+        <div class="col-sm-6 offset-sm-3">
+            <h3 class="myhead2">Post Comment</h3><hr>
+            <form enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                {{form|crispy}}
+                <input type="submit" class="btn btn-dark my-3" />
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}

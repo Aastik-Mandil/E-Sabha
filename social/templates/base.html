@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>E-Sabha</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/static/style.css" rel="stylesheet" />
+</head>
+<body>
+<header id="myheader1">
+    <img src="/static/images/banner.jpg" class="w-100 h-100" />
+    <div id="headfix">
+        <nav class="navbar navbar-expand-md navbar-light bg-transparent">
+            <a class="navbar-brand" href="#">E-Sabha</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div style="font-size: 20px;" class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/social/home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/social/about">About <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/social/contact">Contact <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/social/api">Api <span class="sr-only"></span></a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/social/mypost">MyPost <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/social/myprofile">MyProfile <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/accounts/logout">Logout <span class="sr-only"></span></a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/accounts/login">Login <span class="sr-only"></span></a>
+                        </li>
+                    {% endif %}
+                    {% if user.is_superuser %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/admin">Admin <span class="sr-only"></span></a>
+                        </li>
+                    {% else %}
+                        {% if user.is_authenticated %}
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/social/profile/edit/{{user.myprofile.id}}">Edit Profile<span class="sr-only"></span></a>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+{% block content %}
+{% endblock %}
+<footer class="myfooter text-center p-1 col-xs-12">
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>Toll Free No</h3>
+      <p>1-800-800-xxxx</p>
+    </div>
+    <div class="col-sm-6">
+      <h3>Social Media</h3>
+      <a href="#"><span class="fa fa-facebook-official fa-2x mx-2"></span></a>
+      <a href="#"><span class="fa fa-twitter fa-2x mx-2"></span></a>
+      <a href="#"><span class="fa fa-youtube fa-2x mx-2"></span></a>
+    </div>
+  </div>
+  <p>Copyright @E-Sabha.com</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
