@@ -72,7 +72,7 @@ pywinpty==0.5.7
 pyzmq==18.1.1
 requests==2.23.0
 scikit-learn==0.22.1
-scipy==1.4.1
+scipy==1.10.0
 Send2Trash==1.5.0
 six==1.14.0
 sqlparse==0.3.1
