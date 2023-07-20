@@ -57,7 +57,7 @@ Pillow==7.1.2
 prometheus-client==0.7.1
 prompt-toolkit==3.0.2
 pygame==1.9.6
-Pygments==2.5.2
+Pygments==2.15.0
 PyInstaller==3.6
 PyJWT==1.7.1
 pylint==2.5.0
